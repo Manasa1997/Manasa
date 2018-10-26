@@ -1,0 +1,120 @@
+1) The JOIN which does Cartesian Product is called?
+
+a) Left Join
+b) Left Outer Join
+c) Right Outer Join
+d) Cross Join
+             (d)
+
+2) Are FULL Outer Join and Cross Join Same?
+
+a) False
+b) True
+             (b)
+
+3) The JOIN which returns all the records from the right table in conjunction with the matching records from the left table and if there are no matching values in the left table, it returns NULL. Which is this JOIN?
+
+a) Right JOIN
+b) CROSS JOIN
+c) LEFT Join
+d) Full OUTER JOIN
+             (a)
+
+6) What is the other name of INNER JOIN?
+
+a) Equi Join
+b) In Join
+c) Out Join
+d) All of the above
+             (a)
+
+7) Which type of Inner Join fetches result with redundant data?
+
+a) Cross
+b) Left Outer
+c) IN
+d) Equi
+             (d)
+
+8) Which join is used for Joining the table to itself?
+
+a) In
+b) Natural
+c) Cross
+d) Self
+             (d)
+
+9) Having clause is processed after the GROUP BY clause and any aggregate functions.
+
+A) True
+B) False
+             (a)
+
+10) The sequence of the columns in a GROUP BY clause has no effect in the ordering of the output.
+
+A) True
+B) False
+             (a)
+
+11) All aggregate functions ignore NULLs except for ............ 
+
+A) Distinct
+B) Count (*)
+C) Average()
+D) None of above
+             (b)
+
+12) For the purposes of ............, null values are considered equal to other nulls and are grouped together into a single result row. 
+
+A) Having
+B) Group By
+C) Both of above
+D) None of above
+             (b)
+
+13) If you SELECT attributes and use an aggregate function, you must GROUP BY the non-aggregate attributes.
+
+A) True
+B) False
+             (a)
+
+14) For an Inner Join it is very important, which table is first one and which second one.
+
+A) True
+B) False
+             (b)
+16) With an outer join the columns from the table where data is "missing" are returned as NULL values.
+
+A) True
+B) False
+             (a)
+
+17) A cross join without WHERE clause returns a Cartesian product.
+
+A) True
+B) False
+             (a)
+
+18) A join in which the values in the columns, that are to be joined, are compared using a comparison operator, is called an . . . . . . join. 
+
+A) left outer
+B) right
+C) inner
+D) self
+             (c)        
+19) Which function in SQL is used in query to find the count of the items in the concerned object (i.e. table, view, etc.)?
+
+a) COUNTER
+b) COUNT
+c) DETECT
+d) None of the above
+             (b)
+
+20) Below query is run in SQL Server 2012, is this query valid or invalid: 
+Select count(*) as X
+from Table_Name
+Group by ()
+
+A) Valid
+B) Invalid
+              (a)
