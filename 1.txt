@@ -1,0 +1,1 @@
+create table enquiry(enquiryid Number Primary Key,firstName Varchar2(20),lastName varchar2(20),contactNo Number(10),domain Varchar2(20),city Varchar2(20));
