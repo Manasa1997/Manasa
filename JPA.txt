@@ -1,0 +1,116 @@
+package com.cg.employee;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+
+
+public class PersistEmployee {
+	public static void main(String[] args) {
+	EntityManagerFactory emf=Persistence.createEntityManagerFactory("empmanagement");
+	EntityManager em=emf.createEntityManager();
+	em.getTransaction().begin();
+	
+	Scanner sc=new Scanner(System.in);
+	System.out.println("1.Insert");
+	System.out.println("2.View");
+	System.out.println("3.update");
+	System.out.println("4.delete");
+	System.out.println("5.Search by id");
+	System.out.println("6.Exit");
+	System.out.println("enter your choice");
+	int n=0;
+	try{
+		n=sc.nextInt();
+		sc.nextLine();
+	}
+	
+	catch(InputMismatchException e){
+		System.out.println("Enter only digits");
+	}
+	
+	switch(n)
+	{
+	case 1:
+		Employee e=new Employee();
+		
+		System.out.println("Enter name");
+		String name=sc.nextLine();
+		System.out.println("Enter Salary");
+		double salary=sc.nextDouble();
+		e.setName(name);
+		e.setSalary(salary);
+		em.persist(e);
+		break;
+	
+	
+	case 2:
+		Query q=em.createQuery(" select l1 from Employee l1");
+		List<Employee> list=q.getResultList();
+		for(Employee lib:list){
+			System.out.println("=======");
+			System.out.println("Id:"+lib.getId());
+			System.out.println("name:"+lib.getName());
+			System.out.println("Salary:"+lib.getSalary());}
+			break;
+	
+		case 3:
+			
+			System.out.println("Enter id");
+		    int id=sc.nextInt();
+		    
+		    Employee l3=em.find(Employee.class,id);
+		    if(l3!=null){
+			sc.nextLine();;
+			System.out.println("Enter name");
+			String b=sc.nextLine();
+			l3.setName(b);
+			
+			System.out.println("Enter sal");
+			double p=sc.nextDouble();
+			l3.setSalary(p);
+			System.out.println("updated");
+			em.persist(l3);
+			}
+		    else{
+		    	System.out.println("not available");
+		    }
+			break;
+		case 4:
+			
+			System.out.println("Enter id");
+		    int id1=sc.nextInt();
+		    Employee l=em.find(Employee.class,id1);
+			em.remove(l);
+			System.out.println("deleted");
+	          break;
+case 5:
+	System.out.println("Enter id");
+    int id3=sc.nextInt();
+    Employee l1=em.find(Employee.class,id3);
+ 
+	
+		System.out.println("=======");
+		System.out.println("Id:"+l1.getId());
+		System.out.println("name:"+l1.getName());
+		System.out.println("Salary:"+l1.getSalary());
+		break;
+case 6:System.exit(0);
+System.out.println("Exit");
+	break;
+	default:System.out.println("Enter correct choice");
+	break;
+	}
+	em.getTransaction().commit();
+	em.close();
+	emf.close();
+	
+	
+	}
+	}
+
